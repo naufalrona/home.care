@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="box/tanya.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="" href="image/homecare.png">
+    <title>HomeCare</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><img src="image/logolurus.png" width="55%"></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">HomeCare</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--kotak-->
+    <h1 class="name">Tanya Dokter</h1>
+    <div class="tautan"><a href="home.html">Home</a> >> Tanya Dokter<a href="pgntny.html" class="tanya">Buat Pertanyaan</a>
+    </div>
+
+
+
+    <div class="bg">
+        <button class="btn prev">&#10094;</button>
+        <button class="btn next">&#10095;</button>
+        <div class="persegi">
+            <img class="images" src="image/images.png" alt="images 3" /><img class="images-1" src="image/DE1.png"
+                alt="images 4" />
+            <p class="tema"><b>Sakit Menstruasi yang berbeda</b></p>
+            <div class="oleh">
+                <p>Dari : anandi</p>
+                <p>Terjawab oleh Dr. Afia</p>
+            </div>
+            <p class="soal">"Kenapa sakit menstruasi saya tambah sakit tidak seperti biasanya ya ?</p>
+            <P class="jawab"><b>Terjawab:</b> Terima kasih telah bertanya di HomeCare. Rasa nyeri saat menstruasi ...
+            </P>
+        </div>
+        <div class="persegi2">
+            <img class="images" src="image/images.png" alt="images 3" /><img class="images-1" src="image/DO1.png"
+                alt="images 4" />
+            <p class="tema"><b>Kesehatan Tubuh Bayi</b></p>
+            <div class="oleh">
+                <p>Dari : Nisa</p>
+                <p>Terjawab oleh Dr. Kevin</p>
+            </div>
+            <p class="soal">Tulang rusuk bayi menonjol, apakah itu normal ? dan kenapa sering kentut ?</p>
+            <P class="jawab"><b>Terjawab:</b> Terima kasih telah bertanya di HomeCare. Terkait kelainan bawaan tentang
+                ...</P>
+        </div>
+        <div class="persegi3">
+            <img class="images" src="image/images.png" alt="images 3" /><img class="images-1" src="image/DO2.png"
+                alt="images 4" />
+            <p class="tema"><b>Kesehatan Gigi</b></p>
+            <div class="oleh">
+                <p>Dari : Sumiati</p>
+                <p>Terjawab oleh Dr. Tom Holan</p>
+            </div>
+            <p class="soal">"Kenapa gigi saya sakit padahal tidak berlubang ?"</p>
+            <P class="jawab"><b>Terjawab:</b> Terima kasih telah bertanya di HomeCare. Nyeri gigi memang paling sering
+                ...</P>
+        </div>
+        <div class="persegi4">
+            <img class="images" src="image/images.png" alt="images 3" /><img class="images-1" src="image/DE2.png    "
+                alt="images 4" />
+            <p class="tema"><b>Panca Indra Telinga</b></p>
+            <div class="oleh">
+                <p>Dari : Cassandra</p>
+                <p>Terjawab oleh Dr. Melisa</p>
+            </div>
+            <p class="soal">"Kenapa telinga tiba tiba sakit dan tidak bisa mendengar ?"</p>
+            <P class="jawab"><b>Terjawab:</b> Terima kasih telah bertanya di HomeCare. Telinga yang mendadak tidak bisa
+                ...</P>
+        </div>
+    </div>
+
+
+
+    <script>
+        const body = document.querySelector("body"),
+            nav = document.querySelector("nav"),
+            modeToggle = document.querySelector(".dark-light"),
+            searchToggle = document.querySelector(".searchToggle"),
+            sidebarOpen = document.querySelector(".sidebarOpen"),
+            siderbarClose = document.querySelector(".siderbarClose");
+
+        let getMode = localStorage.getItem("mode");
+        if (getMode && getMode === "dark-mode") {
+            body.classList.add("dark");
+        }
+
+        modeToggle.addEventListener("click", () => {
+            modeToggle.classList.toggle("active");
+            body.classList.toggle("dark");
+
+            if (!body.classList.contains("dark")) {
+                localStorage.setItem("mode", "light-mode");
+            } else {
+                localStorage.setItem("mode", "dark-mode");
+            }
+        });
+
+        searchToggle.addEventListener("click", () => {
+            searchToggle.classList.toggle("active");
+        });
+
+
+        sidebarOpen.addEventListener("click", () => {
+            nav.classList.add("active");
+        });
+
+        body.addEventListener("click", e => {
+            let clickedElm = e.target;
+
+            if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+                nav.classList.remove("active");
+            }
+        });
+        const contentContainer = document.querySelector('.content-container');
+        const slideBtns = document.querySelectorAll('.slide-btn');
+
+        let currentPosition = 0;
+        const step = 200; // Besar pergeseran satu kali klik tombol
+
+    </script>
+
+</body>
+
+</html>

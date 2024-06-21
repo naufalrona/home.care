@@ -1,0 +1,89 @@
+.container {
+    position: absolute;
+    top: 170px;
+    display: flex;
+    flex-direction: row;
+    color: #000;
+}
+
+.judul {
+    text-align: center; /* membuat text berada di tengah */
+    margin-top: 10%; /* memberikan jarak antara judul dengan element di atasnya */
+    color: #e14b4b;
+  }
+  
+
+.penyakit{
+    display: flex;
+}
+
+.penyakit a{
+    color: black;
+    text-decoration: none;
+}
+
+.box {
+    width: 70px;
+    height: 70px;
+    background-color: #fba3a3;
+    border: 1px solid #b92b2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 5px;
+}
+
+.item {
+    background: #ffd6d6;
+    border: 1px solid #E0F2F1;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 50px;
+    width: 1000px;
+    height: 180px;
+}
+
+
+/*BACK*/
+
+  .back-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 450px; /* Contoh margin atas */
+    margin-bottom: 10px;
+  }
+  
+  .back-btn {
+    background-color: #ff0095;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+/*footer*/
+footer {
+    background-color: #ffe6e6;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+    

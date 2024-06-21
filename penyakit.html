@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="box/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="box/penyakit.css">
+    <link rel="icon" type="" href="image/homecare.png">
+    <title>HomeCare</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-bar">
+            <span class="logo navLogo"><img src="image/logolurus.png" width="55%"></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">HomeCare</a></span>
+
+                </div>
+
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+                <a href="akun.html"><img class="profile" src="image/profile.png" alt=""></a>
+                
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="judul">
+        <h1>Daftar Penyakit</h1>
+    </div>
+
+    <div class="container">
+        <div class="penyakit">
+            <div class="box">A</div>  
+            <div class="box">B</div>
+            <div class="box">C</div>
+            <div class="box">D</div>
+            <div class="box">E</div>
+            <div class="box">F</div>
+            <div class="box">G</div>
+            <div class="box">H</div>
+            <div class="box">I</div>
+            <div class="box">J</div>
+            <div class="box">K</div>
+            <div class="box">L</div>
+            <div class="box">M</div>
+        </div>
+        <div class="penyakit">
+            <div class="box">N</div>
+            <div class="box">O</div>
+            <div class="box">P</div>
+            <div class="box">Q</div>
+            <div class="box">R</div>
+            <div class="box">S</div>
+            <div class="box">T</div>
+            <div class="box">U</div>
+            <div class="box">V</div>
+            <div class="box">W</div>
+            <div class="box">X</div>
+            <div class="box">Y</div>
+            <div class="box">Z</div>
+        </div>
+        <div class="item">
+            <b>DIHARAPKAN TIDAK SELF DIAGNOSIS !</b><br>
+            <br>
+            <p>Self-diagnosis adalah mendiagnosis diri dari suatu penyakit atau penyakit berdasarkan pengetahuan diri atau informasi yang diperoleh sendiri. Ketika Anda mendiagnosa diri sendiri, Anda sebenarnya berasumsi bahwa Anda mengetahui masalah kesehatan yang Anda miliki. 
+            Cari bantuan dari profesional kesehatan, dengan menanyakan lebih spesifik mengenai gejala yang Anda alami dan berapa lama gejala tersebut berlangsung, dokter Anda dapat membuat diagnosis yang tepat. </p>
+        </div>
+    </div>
+    
+
+
+    <script>
+        const body = document.querySelector("body"),
+            nav = document.querySelector("nav"),
+            modeToggle = document.querySelector(".dark-light"),
+            searchToggle = document.querySelector(".searchToggle"),
+            sidebarOpen = document.querySelector(".sidebarOpen"),
+            siderbarClose = document.querySelector(".siderbarClose");
+
+        let getMode = localStorage.getItem("mode");
+        if (getMode && getMode === "dark-mode") {
+            body.classList.add("dark");
+        }
+
+        modeToggle.addEventListener("click", () => {
+            modeToggle.classList.toggle("active");
+            body.classList.toggle("dark");
+
+            if (!body.classList.contains("dark")) {
+                localStorage.setItem("mode", "light-mode");
+            } else {
+                localStorage.setItem("mode", "dark-mode");
+            }
+        });
+
+        searchToggle.addEventListener("click", () => {
+            searchToggle.classList.toggle("active");
+        });
+
+
+        sidebarOpen.addEventListener("click", () => {
+            nav.classList.add("active");
+        });
+
+        body.addEventListener("click", e => {
+            let clickedElm = e.target;
+
+            if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
+                nav.classList.remove("active");
+            }
+        });
+    </script>
+
+<div class="back-container">
+    <button class="back-btn" onclick="history.back()">Back</button>
+  </div>
+  <footer>
+  <div class="footer-container">
+    <p>&copy; 2024 HomeCare. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+
+</html>
